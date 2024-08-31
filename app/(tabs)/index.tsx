@@ -4,8 +4,15 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 
 export default function HomeScreen() {
+  const icon = <FontAwesome6 name={'comments'} />;
+  //const icon = <FontAwesome6 name={'comments'} solid />;
+  //const icon = <FontAwesome6 name={'git'} brand />;
+  const regular_icon_btn = <FontAwesome6.Button name={'youtube'} />;
+  const solid_icon_btn = <FontAwesome6.Button name={'comments'} solid />;
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -17,6 +24,8 @@ export default function HomeScreen() {
       }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
+        <button>{regular_icon_btn}</button>
+        <button>{solid_icon_btn}</button>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
